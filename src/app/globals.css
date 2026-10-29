@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-petrol: #0e4d64;
+  --color-petrol-dark: #0a3a4c;
+  --color-petrol-50: #e8f1f4;
+  --color-amber: #f5b841;
+  --color-amber-dark: #e5a62c;
+  --color-ink: #0f1b2d;
+  --color-muted: #3e4c59;
+  --color-subtle: #4a5866;
+  --color-section: #f3f6f7;
+  --color-line: #dce3e7;
+  --color-field: #b9c5cc;
+  --color-success: #1f7a4d;
+  --color-whatsapp: #1f7a4d;
+  --color-error-bg: #fdecec;
+  --color-error: #9b1c1c;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-ink font-sans antialiased; }
+  a { @apply text-petrol; }
+  a:hover { @apply text-petrol-dark; }
+  :focus-visible { outline: 3px solid var(--color-amber); outline-offset: 2px; }
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] border-2 border-transparent px-[22px] text-base font-bold no-underline transition-colors;
+  }
+  .btn-primary { @apply bg-amber text-ink hover:bg-amber-dark hover:text-ink; }
+  .btn-outline { @apply border-petrol bg-white text-petrol hover:bg-petrol-50; }
+  .btn-whatsapp { @apply bg-whatsapp text-white hover:bg-[#186540] hover:text-white; }
+  .input {
+    @apply min-h-12 w-full rounded-[10px] border border-field bg-white px-3.5 text-base text-ink;
+  }
+  .card { @apply rounded-2xl border border-line bg-white; }
+  .container-x { @apply mx-auto w-full max-w-[1200px] px-4 md:px-8; }
+  .eyebrow { @apply m-0 text-[13px] font-extrabold uppercase tracking-[0.06em] text-petrol; }
+  .h2 { @apply m-0 text-[28px] font-extrabold leading-tight tracking-[-0.02em] md:text-[38px]; }
+  input[type="range"] { accent-color: var(--color-petrol); @apply h-11 w-full cursor-pointer; }
+}
